@@ -1,5 +1,10 @@
 def compare(a, b):
     pattern = ""
+    i = 0
+    for x in a:
+        if i < len(b) and x == b[i]:
+            pattern += x
+            i += 1
     return pattern
 
 if __name__ == '__main__':

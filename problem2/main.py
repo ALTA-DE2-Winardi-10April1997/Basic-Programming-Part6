@@ -1,5 +1,16 @@
 def caesar(offset, input_str):
-    return ''
+    pattern = ""
+    for char in input_str:
+        if char.isalpha():
+            is_lower = char.islower()
+            index = ord(char) - ord('a' if is_lower else 'A')
+            move_index = (index+offset) % 26
+            move_char = chr(move_index+ord('a' if is_lower else 'A'))
+            pattern += move_char
+        else:
+            pattern += char
+
+    return pattern
 
 if __name__ == '__main__':
     print(caesar(3, "abc")) # def
